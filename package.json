@@ -1,0 +1,25 @@
+{
+  "name": "proyecto-express",
+  "version": "1.0.0",
+  "description": "API usando express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmmanuelSalcido/proyectoExpress.git"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "Jesus Emmanuel Salcido Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmmanuelSalcido/proyectoExpress/issues"
+  },
+  "homepage": "https://github.com/EmmanuelSalcido/proyectoExpress#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
