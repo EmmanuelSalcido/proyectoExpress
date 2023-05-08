@@ -56,7 +56,7 @@ app.put('/users/id',(request, reponse) => {
       if (error) throw error;
 
       response.send ('User updated successfully. ');
-    });
+    });
 });
 //Eliminar Usuario
 app.delete('/users/:id',(request, reponse) => {
@@ -66,7 +66,7 @@ app.delete('/users/:id',(request, reponse) => {
       if (error) throw error;
 
       response.send ('User deleted. ');
-    });
+    });
 });
 //Mostrar todos los usuarios
 app.get('/productos',(request, response)=>{
@@ -76,3 +76,14 @@ app.get('/productos',(request, response)=>{
       response.send(result);
   });
 });
+//Mostrar un solo usuario por ID productos
+app.get('/productos/:id',(request, reponse) => {
+  const id = request.params.id;
+
+  pool.query('SELECT * FROM productos', (error, result)=>{
+      if (error) throw error;
+
+      response.send(result);
+  });
+});
+
