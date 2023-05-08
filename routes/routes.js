@@ -105,4 +105,13 @@ app.put('/productos/id',(request, reponse) => {
       response.send ('User updated successfully. ');
     });
 });
+//Eliminar Usuario
+app.delete('/productos/:id',(request, reponse) => {
+  const id= request.params.id;
 
+  pool.query('DELATE FROM users WHERE id = ?', id, (error, result)=>{
+      if (error) throw error;
+
+      response.send ('User deleted. ');
+    });
+});
