@@ -95,4 +95,14 @@ app.post('/productos',(request, reponse) => {
       response.status(201).send (`Use added whit ID: ${result.insertId}`);
   });
 });
+//Actualizar usuario existente
+app.put('/productos/id',(request, reponse) => {
+  const id= request.params.id;
+
+  pool.query('UPDATE users SET ? WHERE id = ? ',[request.body, id], (error, result)=>{
+      if (error) throw error;
+
+      response.send ('User updated successfully. ');
+    });
+});
 
