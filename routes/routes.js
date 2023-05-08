@@ -30,3 +30,13 @@ app.get('/users',(request, response)=>{
       response.send(result);
   });
 });
+//Mostrar un solo usuario por ID
+app.get('/users/:id',(request, reponse) => {
+  const id = request.params.id;
+
+  pool.query('SELECT * FROM users', (error, result)=>{
+      if (error) throw error;
+
+      response.send(result);
+  });
+});
