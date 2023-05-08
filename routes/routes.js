@@ -87,3 +87,12 @@ app.get('/productos/:id',(request, reponse) => {
   });
 });
 
+//Agregar un nuevo usuario
+app.post('/productos',(request, reponse) => {
+  pool.query('INSERT INTO users SET ?',request.body, (error, result)=>{
+      if (error) throw error;
+
+      response.status(201).send (`Use added whit ID: ${result.insertId}`);
+  });
+});
+
