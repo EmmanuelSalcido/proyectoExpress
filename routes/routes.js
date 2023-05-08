@@ -21,3 +21,12 @@ const router = (app) => {
 };
 //Explorar el router
 module.exports = router;
+
+//Mostrar todos los usuarios
+app.get('/users',(request, response)=>{
+  pool.query('SELECT * FROM users', (error, result)=>{
+      if (error) throw error;
+
+      response.send(result);
+  });
+});
