@@ -40,3 +40,11 @@ app.get('/users/:id',(request, reponse) => {
       response.send(result);
   });
 });
+//Agregar un nuevo usuario
+app.post('/users',(request, reponse) => {
+  pool.query('INSERT INTO users SET ?',request.body, (error, result)=>{
+      if (error) throw error;
+
+      response.status(201).send (`Use added whit ID: ${result.insertId}`);
+  });
+});
