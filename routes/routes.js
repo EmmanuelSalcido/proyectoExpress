@@ -68,3 +68,11 @@ app.delete('/users/:id',(request, reponse) => {
       response.send ('User deleted. ');
     });
 });
+//Mostrar todos los usuarios
+app.get('/productos',(request, response)=>{
+  pool.query('SELECT * FROM productos', (error, result)=>{
+      if (error) throw error;
+
+      response.send(result);
+  });
+});
